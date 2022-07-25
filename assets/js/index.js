@@ -1,3 +1,5 @@
+import { propiedadesJSON } from "./propiedades.js";
+
 /**
  * @param {object} e
  * @returns {string}
@@ -47,6 +49,8 @@ const search = () => {
   let toMeters = document.querySelector("#meters-to").value;
   if (rooms.length === 0 || fromMeters.length === 0 || toMeters.length === 0) {
     alert("Faltan Campos Por llenar");
+  } else if (Number(fromMeters) > Number(toMeters)) {
+    alert("El valor de metros Desde: debe ser mayor a Hasta:");
   } else {
     filterCards(Number(rooms), Number(fromMeters), Number(toMeters));
   }
@@ -71,6 +75,4 @@ const filterCards = (rooms, fromMeters, toMeters) => {
   document.querySelector("#counter").innerHTML = filtrardatos.length;
 };
 
-document
-  .querySelector("#btn-search")
-  .addEventListener("click", search, filterCards);
+document.querySelector("#btn-search").addEventListener("click", search);
