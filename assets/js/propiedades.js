@@ -1,4 +1,4 @@
-const propiedadesJSON = [
+export const propiedadesJSON = [
   {
     name: "Casa de campo",
     description: "Un lugar ideal para descansar de la ciudad",
