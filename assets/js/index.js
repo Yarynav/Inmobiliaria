@@ -64,15 +64,15 @@ const search = () => {
  */
 const filterCards = (rooms, fromMeters, toMeters) => {
   let empty = "";
-  let filtrardatos = propiedadesJSON.filter((e) => {
+  let filterData = propiedadesJSON.filter((e) => {
     return e.rooms === rooms && e.m >= fromMeters && e.m <= toMeters;
   });
 
-  filtrardatos.forEach((e) => {
+  filterData.forEach((e) => {
     empty += card(e);
     document.querySelector(".propiedades").innerHTML = empty;
   });
-  document.querySelector("#counter").innerHTML = filtrardatos.length;
+  document.querySelector("#counter").innerHTML = filterData.length;
 };
 
 document.querySelector("#btn-search").addEventListener("click", search);
